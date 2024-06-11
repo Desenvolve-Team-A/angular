@@ -1,0 +1,42 @@
+<h2>Lista de Produtos</h2>
+<div id="body">
+  <section id="inputs">
+    <div id="inputNumber">
+      <input type="number">
+      <label> results per page</label>
+    </div>
+    <div id="inputText">
+      <label>Search </label>
+      <input type="text">
+    </div>
+  </section>
+  <table>
+    <tr id="primeiraLinha">
+      <th>ID</th>
+      <th>Subgrupo</th>
+      <th>Marca</th>
+      <th>Unidade</th>
+      <th>Nome</th>
+      <th>GTIN</th>
+      <th>Valor</th>
+      <th>Data Cadastro</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let produto of produtos">
+      <td>{{ produto.id }}</td>
+      <td>{{ produto.id_produto_subgrupo }}</td>
+      <td>{{ produto.id_produto_marca }}</td>
+      <td>{{ produto.id_produto_unidade }}</td>
+      <td>{{ produto.nome }}</td>
+      <td>{{ produto.gtin }}</td>
+      <td>{{ produto.valor }}</td>
+      <td>{{ produto.data_cadastro | date }}</td>
+      <td><button id="buttonEdit">Edit</button><button id="buttonDelete">Delete</button></td>
+    </tr>
+  </table>
+  <section id="bottom">
+    <p>Showing 2 of 2 entrities</p>
+    <div><button id="buttonJump">Previous</button><button id="buttonNext">Next</button></div>
+  </section>
+  <section><button id="buttonPlus">+</button></section>
+</div>
